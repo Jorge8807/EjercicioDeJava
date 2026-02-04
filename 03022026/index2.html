@@ -5,24 +5,22 @@
             <link rel="stylesheet" href="style.css">
         </head>
         <body>
-            <h1>Calculadora</h1>
-            <br>
-            <label>Valor 1</label>
-            <input type="text" id="cajaValorUno"></input>
-            <br>
-            <label>Valor 2</label>
-            <input type="text" id="cajaValorDos"></input>
-            <br>
-            <br>
-            <button onclick="suma();">Suma</button> 
-            <button onclick="resta();">Resta</button> 
-            <button onclick="multiplicar();">Multiplicar</button> 
-            <button onclick="division();">Division</button> 
-            <script src="calculadora.js"></script>
-            <br>
-            <br>
-            <label>Resultado: </label>
-            <input type="text" id="cajaresultado" disabled></input>
+            <div class="card">
+                <h1>Calculadora</h1>
+                <label>Valor 1</label>
+                <input type="text" id="cajaValorUno"></input>
+                <label>Valor 2</label>
+                <input type="text" id="cajaValorDos"></input>
+                <div class="buttons">
+                    <button onclick="suma();">Suma</button> 
+                    <button onclick="resta();">Resta</button> 
+                    <button onclick="multiplicar();">Multiplicar</button> 
+                    <button onclick="division();">Division</button> 
+                </div>
+                <script src="calculadora.js"></script>
+                <label>Resultado: </label>
+                <input type="text" id="cajaresultado" disabled></input>
+            </div>
         </body>
     </html>
 </DOCTYPE>
