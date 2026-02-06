@@ -1,35 +1,73 @@
-function suma (){
-//Una variable es un espacio en memoria para almacenar un dato
-cajauno=parseInt(document.getElementById("cajaValorUno").value);
-cajados=parseInt(document.getElementById("cajaValorDos").value);
-resulatdo=cajauno+cajados;
-document.getElementById("cajaresultado").value=resulatdo;
+function leerNumero(id) {
+  const valor = parseFloat(document.getElementById(id).value);
+  return Number.isFinite(valor) ? valor : null;
 }
-function resta (){
-//Una variable es un espacio en memoria para almacenar un dato
-cajauno=parseInt(document.getElementById("cajaValorUno").value);
-cajados=parseInt(document.getElementById("cajaValorDos").value);
-resulatdo=cajauno-cajados;
-document.getElementById("cajaresultado").value=resulatdo;
+
+function setResultado(valor) {
+  document.getElementById("cajaresultado").value = valor;
 }
-function multiplicar (){
-//Una variable es un espacio en memoria para almacenar un dato
-cajauno=parseInt(document.getElementById("cajaValorUno").value);
-cajados=parseInt(document.getElementById("cajaValorDos").value);
-resulatdo=cajauno*cajados;
-document.getElementById("cajaresultado").value=resulatdo;
+
+function suma() {
+  const cajauno = leerNumero("cajaValorUno");
+  const cajados = leerNumero("cajaValorDos");
+  if (cajauno === null || cajados === null) {
+    setResultado("Error");
+    return;
+  }
+  const resultado = cajauno + cajados;
+  setResultado(resultado);
 }
-function division (){
-//Una variable es un espacio en memoria para almacenar un dato
-cajauno=parseInt(document.getElementById("cajaValorUno").value);
-cajados=parseInt(document.getElementById("cajaValorDos").value);
-resulatdo=cajauno/cajados;
-document.getElementById("cajaresultado").value=resulatdo;
+
+function resta() {
+  const cajauno = leerNumero("cajaValorUno");
+  const cajados = leerNumero("cajaValorDos");
+  if (cajauno === null || cajados === null) {
+    setResultado("Error");
+    return;
+  }
+  const resultado = cajauno - cajados;
+  setResultado(resultado);
 }
-function IMC (){
-//Una variable es un espacio en memoria para almacenar un dato
-peso=parseFloat(document.getElementById("cajaValorUno").value);
-altura=parseFloat(document.getElementById("cajaValorDos").value);
-resulatdo=peso/(altura*altura);
-document.getElementById("cajaresultado").value=resulatdo;
+
+function multiplicar() {
+  const cajauno = leerNumero("cajaValorUno");
+  const cajados = leerNumero("cajaValorDos");
+  if (cajauno === null || cajados === null) {
+    setResultado("Error");
+    return;
+  }
+  const resultado = cajauno * cajados;
+  setResultado(resultado);
+}
+
+function division() {
+  const cajauno = leerNumero("cajaValorUno");
+  const cajados = leerNumero("cajaValorDos");
+  if (cajauno === null || cajados === null || cajados === 0) {
+    setResultado("Error");
+    return;
+  }
+  const resultado = cajauno / cajados;
+  setResultado(resultado);
+}
+
+function IMC() {
+  const peso = leerNumero("cajaValorUno");
+  const altura = leerNumero("cajaValorDos");
+  if (peso === null || altura === null || altura === 0) {
+    setResultado("Error");
+    return;
+  }
+  const resultado = peso / (altura * altura);
+  setResultado(resultado);
+}
+
+function celsiusAFahrenheit() {
+  const celsius = leerNumero("cajaValorUno");
+  if (celsius === null) {
+    setResultado("Error");
+    return;
+  }
+  const resultado = (celsius * 9) / 5 + 32;
+  setResultado(resultado);
 }
